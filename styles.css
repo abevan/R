@@ -1,0 +1,129 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --accent-color: #007bff;
+  --header-bg: #f8f9fa;
+  --card-bg: #ffffff;
+  --nav-button-bg: #007bff;
+  --nav-button-color: #ffffff;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --accent-color: #66b2ff;
+  --header-bg: #1f1f1f;
+  --card-bg: #1e1e1e;
+  --nav-button-bg: #66b2ff;
+  --nav-button-color: #121212;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+  background-color: var(--header-bg);
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+h1, h2 {
+  margin-bottom: 1rem;
+}
+
+.models-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.model-card {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.model-card:hover {
+  transform: translateY(-5px);
+}
+
+.hidden {
+  display: none;
+}
+
+.steps-container {
+  margin-bottom: 1rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.step {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-left: 4px solid var(--accent-color);
+  background-color: var(--card-bg);
+  border-radius: 4px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav-button {
+  background-color: var(--nav-button-bg);
+  color: var(--nav-button-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  flex: 1;
+  transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+  background-color: var(--accent-color);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--header-bg);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
